@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.open() Test Bed</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🪟 window.open() Test Bed</h1>
+        <p class="description">
+            A comprehensive test bed for experimenting with different <code>window.open()</code> scenarios.
+            Click any button to test various URL types and window features.
+        </p>
+
+        <section class="test-section">
+            <h2>URL Types</h2>
+            <div class="button-grid">
+                <button onclick="openSameOrigin()" class="test-button">
+                    Same Origin
+                    <span class="hint">Opens this page in a new window</span>
+                </button>
+                <button onclick="openAboutBlank()" class="test-button">
+                    about:blank
+                    <span class="hint">Opens a blank page</span>
+                </button>
+                <button onclick="openExternalURL()" class="test-button">
+                    External URL
+                    <span class="hint">Opens example.com</span>
+                </button>
+                <button onclick="openDataURL()" class="test-button">
+                    Data URL
+                    <span class="hint">Opens inline HTML content</span>
+                </button>
+                <button onclick="openRelativePath()" class="test-button">
+                    Relative Path
+                    <span class="hint">Opens sample.html</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Window Features</h2>
+            <div class="button-grid">
+                <button onclick="openWithToolbar()" class="test-button">
+                    With Toolbar
+                    <span class="hint">toolbar=yes,menubar=yes</span>
+                </button>
+                <button onclick="openMinimal()" class="test-button">
+                    Minimal Window
+                    <span class="hint">No toolbar, menubar, or location</span>
+                </button>
+                <button onclick="openCustomSize()" class="test-button">
+                    Custom Size
+                    <span class="hint">400x300 window</span>
+                </button>
+                <button onclick="openPositioned()" class="test-button">
+                    Positioned
+                    <span class="hint">At specific screen position</span>
+                </button>
+                <button onclick="openScrollable()" class="test-button">
+                    Scrollable
+                    <span class="hint">With scrollbars enabled</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Target Options</h2>
+            <div class="button-grid">
+                <button onclick="openBlankTarget()" class="test-button">
+                    Target: _blank
+                    <span class="hint">New window/tab (default)</span>
+                </button>
+                <button onclick="openSelfTarget()" class="test-button">
+                    Target: _self
+                    <span class="hint">Replace current window</span>
+                </button>
+                <button onclick="openNamedTarget()" class="test-button">
+                    Named Target
+                    <span class="hint">Reuses same window</span>
+                </button>
+                <button onclick="openParentTarget()" class="test-button">
+                    Target: _parent
+                    <span class="hint">Parent frame (if any)</span>
+                </button>
+                <button onclick="openTopTarget()" class="test-button">
+                    Target: _top
+                    <span class="hint">Topmost frame</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Advanced Scenarios</h2>
+            <div class="button-grid">
+                <button onclick="openWithWriteContent()" class="test-button">
+                    Write Content
+                    <span class="hint">Opens blank and writes HTML</span>
+                </button>
+                <button onclick="openMultipleWindows()" class="test-button">
+                    Multiple Windows
+                    <span class="hint">Opens 3 windows at once</span>
+                </button>
+                <button onclick="openWithNoopener()" class="test-button">
+                    With noopener
+                    <span class="hint">No window.opener reference</span>
+                </button>
+                <button onclick="openWithNoreferrer()" class="test-button">
+                    With noreferrer
+                    <span class="hint">No referrer + noopener</span>
+                </button>
+                <button onclick="testWindowReference()" class="test-button">
+                    Test Reference
+                    <span class="hint">Get window reference & properties</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="test-section">
+            <h2>Complex Features</h2>
+            <div class="button-grid">
+                <button onclick="openPopup()" class="test-button">
+                    Popup Window
+                    <span class="hint">Small centered popup</span>
+                </button>
+                <button onclick="openMaximized()" class="test-button">
+                    Fullscreen
+                    <span class="hint">Attempts fullscreen mode</span>
+                </button>
+                <button onclick="openWithAllFeatures()" class="test-button">
+                    All Features
+                    <span class="hint">Comprehensive feature string</span>
+                </button>
+                <button onclick="openConditional()" class="test-button">
+                    Conditional Open
+                    <span class="hint">Checks popup blocker</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <h2>Event Log</h2>
+            <div id="log" class="log-output"></div>
+            <button onclick="clearLog()" class="clear-button">Clear Log</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
